@@ -32,6 +32,10 @@ try:
         print(f"Error: Could not fetch the article. Status code: {request_response.status_code}")
         sys.exit(1)
 
+except requests.exceptions.MissingSchema:
+    print(f"Error: '{url}' is not a valid URL. Make sure it starts with http:// or https://")
+    sys.exit(1)
+
 except requests.exceptions.ConnectionError:
     print(f"Error: Could not connect to {url}. Check the URL and your internet connection.")
     sys.exit(1)
