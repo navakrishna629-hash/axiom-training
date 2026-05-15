@@ -1,0 +1,10 @@
+Python is named after the Monty Python comedy troupe, not the snake.
+- Guido van Rossum created it in 1989 while working at CWI in the Netherlands.
+- The language emphasizes readability with its significant whitespace indentation.
+- Everything in Python is an object, including numbers and functions.
+- Typing import this reveals the Zen of Python, a set of 19 guiding principles.
+- Python uses duck typing, meaning if it walks like a duck and quacks like a duck, it's a duck.
+- Negative indexing in lists and strings counts from the end, so index -1 is the last item.
+- Integers have arbitrary precision with no overflow errors.
+- The walrus operator := assigns and evaluates expressions in one go since Python 3.8.
+- F-strings provide fast, readable string formatting like f"Hello {name}".

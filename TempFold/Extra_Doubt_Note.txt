@@ -1,0 +1,55 @@
+How can I read a text file and Print every line in that file that contains the a particluar word
+Here's a simple Python approach:
+
+
+keyword = "hello"
+
+with open("file.txt", "r") as f:
+    for line in f:
+        if keyword in line:
+            print(line, end="")
+Key points:
+
+if keyword in line checks if the word appears anywhere in the line
+end="" avoids double newlines since each line already has \n
+Case-insensitive version (matches "Hello", "HELLO", etc.):
+
+
+keyword = "hello"
+
+with open("file.txt", "r") as f:
+    for line in f:
+        if keyword.lower() in line.lower():
+            print(line, end="")
+With line numbers:
+
+
+keyword = "hello"
+
+with open("file.txt", "r") as f:
+    for i, line in enumerate(f, start=1):
+        if keyword in line:
+            print(f"Line {i}: {line}", end="")
+
+========================================================================
+
+keyword = "hello"
+
+with open("file.txt", "r") as f:
+    for i, line in enumerate(f, start=1):
+        if keyword in line:
+            print(f"Line {i}: {line}", end="")
+Does start-1 here refer to the text cursor position of the text file ?
+No, start=1 sets the starting value of the counter i, not a cursor position.
+
+enumerate(f, start=1) pairs each line with a number, beginning at 1 instead of the default 0:
+
+
+Line 1: first line of file
+Line 2: second line of file
+Line 3: third line of file
+...
+Without start=1, i would start at 0, which feels unnatural for line numbers since most editors count from 1.
+
+The file is still read from the very beginning — start=1 only affects the counter label, nothing else.
+
